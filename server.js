@@ -1,10 +1,12 @@
 // =========================
 // HUMAN — backend server.js
 // =========================
-import humTransferRoutes from "./routes/hum_transfer.js";
 
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // DB init
 import db from "./db.js";
@@ -29,13 +31,15 @@ import humStatusRoutes from "./routes/hum_status.js";
 import humBuyRoutes from "./routes/hum_buy.js";
 import humWithdrawRoutes from "./routes/hum_withdraw.js";
 import humProtocolRoutes from "./routes/hum_protocol.js";
-import healthRoutes from "./routes/health.js";
+import humTransferRoutes from "./routes/hum_transfer.js";
 import profileRoutes from "./routes/profile.js";
-
+import healthRoutes from "./routes/health.js";
 
 // EXPRESS INIT
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// Render injecta PORT automaticamente
+const PORT = process.env.PORT || 10000;
 
 // MIDDLEWARE
 app.use(cors());
@@ -56,7 +60,7 @@ app.use("/hum", humStatusRoutes);
 app.use("/hum", humBuyRoutes);
 app.use("/hum", humWithdrawRoutes);
 app.use("/hum/protocol", humProtocolRoutes);
-app.use("/hum", humTransferRoutes)
+app.use("/hum", humTransferRoutes);
 app.use("/profile", profileRoutes);
 
 // ROOT
@@ -64,7 +68,7 @@ app.get("/", (req, res) => {
   res.json({ status: "HUMAN backend online" });
 });
 
-// START SERVER
-app.listen(PORT, () => {
-  console.log(`🟢 HUMAN backend ativo em http://localhost:${PORT}`);
+// START SERVER — **ESSENCIAL PARA RENDER**
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🟢 HUMAN backend ativo e a escutar em PORTA ${PORT}`);
 });
