@@ -1,0 +1,44 @@
+{
+  "name": "HUM Protocol",
+  "symbol": "HUM",
+  "version": "1.0.0",
+  "network": "TON",
+  "description": "HUM é um marcador de presença humana ao longo do tempo. Não é investimento, promessa ou rendimento garantido.",
+
+  "supply": {
+    "total": 80000000,
+    "unit": "HUM",
+    "distribution": {
+      "mining_presence": "59%",
+      "public_purchase": "40%",
+      "team_reserve": "1%"
+    }
+  },
+
+  "rules": {
+    "accumulation": "HUM só pode ser acumulado por presença humana, tarefas, convites e NFTs.",
+    "purchase_limit": "A compra de HUM é permitida apenas até 40% do supply total.",
+    "conversion_lock": "Conversões HUM → TON só são permitidas após 20% do HUM total estar minerado.",
+    "market_protection": "Não existe compra nem conversão antes de maturidade coletiva do sistema."
+  },
+
+  "mining": {
+    "base_rate": "1 HUM por 60 dias de presença contínua",
+    "velocity_packages": "Serão definidos futuramente",
+    "note": "A velocidade altera apenas o tempo, nunca o supply total."
+  },
+
+  "value_model": {
+    "base_reference": "Valor cresce com HUM minerado",
+    "max_theoretical_value_per_hum_eur": 200000,
+    "note": "O valor não é fixo nem garantido e depende da maturidade do sistema."
+  },
+
+  "status": {
+    "buy_enabled": false,
+    "conversion_enabled": false,
+    "reason": "Sistema ainda não atingiu maturidade coletiva mínima."
+  },
+
+  "last_update": "2026-01-06"
+}

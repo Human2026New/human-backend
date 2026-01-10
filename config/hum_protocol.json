@@ -1,0 +1,25 @@
+{
+  "token": "HUM",
+  "total_supply": 80000000,
+  "team_allocation_percent": 1,
+  "buyable_percent_max": 40,
+  "mining_percent_max": 59,
+
+  "rules": {
+    "accumulation": "presence_only",
+    "conversion_enabled_after_percent": 20,
+    "min_withdraw_ton": 10,
+    "min_hum_withdraw": 20
+  },
+
+  "mining": {
+    "base_time_days_per_hum": 60,
+    "speedups_enabled": true,
+    "speedup_duration_days": 30
+  },
+
+  "status": {
+    "mined_supply": 0,
+    "phase": "genesis"
+  }
+}
