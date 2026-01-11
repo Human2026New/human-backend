@@ -8,6 +8,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// EXPRESS INIT
+const app = express();
+
+// Render injecta PORT automaticamente
+const PORT = process.env.PORT || 10000;
+
 // DB init
 import db from "./db.js";
 
@@ -35,11 +41,8 @@ import humTransferRoutes from "./routes/hum_transfer.js";
 import profileRoutes from "./routes/profile.js";
 import healthRoutes from "./routes/health.js";
 
-// EXPRESS INIT
-const app = express();
-
-// Render injecta PORT automaticamente
-const PORT = process.env.PORT || 10000;
+// 🆕 Nova rota da app ↔ backend
+import messageRoutes from "./routes/message.js";
 
 // MIDDLEWARE
 app.use(cors());
@@ -49,6 +52,7 @@ app.use(express.json());
 app.use("/health", healthRoutes);
 
 // USE ROUTES
+app.use("/api", messageRoutes);     // 🆕 AGORA NO SÍTIO CERTO! ✔️
 app.use("/hum", humUserRoutes);
 app.use("/presence", presenceRoutes);
 app.use("/rewards", rewardsRoutes);
