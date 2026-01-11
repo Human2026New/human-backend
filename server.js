@@ -40,6 +40,8 @@ import humProtocolRoutes from "./routes/hum_protocol.js";
 import humTransferRoutes from "./routes/hum_transfer.js";
 import profileRoutes from "./routes/profile.js";
 import healthRoutes from "./routes/health.js";
+import telegramRoutes from "./routes/telegram.js";
+
 
 // 🆕 Nova rota da app ↔ backend
 import messageRoutes from "./routes/message.js";
